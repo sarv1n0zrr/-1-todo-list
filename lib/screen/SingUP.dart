@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_to_do_list/auth/main_page.dart';
 import 'package:flutter_to_do_list/const/colors.dart';
 import 'package:flutter_to_do_list/data/auth_data.dart';
 
@@ -94,6 +95,10 @@ class _SignUp_ScreenState extends State<SignUp_Screen> {
         onTap: () {
           AuthenticationRemote()
               .register(email.text, password.text, PasswordConfirm.text);
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => Main_Page()),
+          );
         },
         child: Container(
           alignment: Alignment.center,

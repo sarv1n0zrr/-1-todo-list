@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_to_do_list/auth/main_page.dart';
 import 'package:flutter_to_do_list/const/colors.dart';
 import 'package:flutter_to_do_list/data/auth_data.dart';
 
@@ -86,6 +87,10 @@ class _LogIN_ScreenState extends State<LogIN_Screen> {
       child: GestureDetector(
         onTap: () {
           AuthenticationRemote().login(email.text, password.text);
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => Main_Page()),
+          );
         },
         child: Container(
           alignment: Alignment.center,
